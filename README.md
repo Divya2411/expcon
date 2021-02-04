@@ -12,5 +12,5 @@ Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 need to install dependencies 
-1. npm i bootstrap@5.0.0-beta1
+1. npm i bootstrap@5.0.0-beta1     
 2.npm i react-router-dom
