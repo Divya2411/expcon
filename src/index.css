@@ -1,13 +1,428 @@
-body {
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box; 
+ 
+ 
+}
+/* navbar */
+
+.nav-item{
+  font-weight:500 ;
+  color: #16c9f6 !important;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* button */
+
+.gradButton{
+  width: 200px;
+  height: 60px;
+  outline: none;
+  border: none;
+  position: relative;
+  border-radius: 180px;
+  cursor: pointer;
+ 
+  background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #6fba82);
+}
+.gradButton a{
+  text-decoration: none ;
+}
+.gradButton::after{
+  content: '';
+  position: absolute;
+  display: block;
+  border-radius:180px ;
+  width: calc(100% - 12px);
+  height: calc(100% - 12px);
+  top: 6px;
+  left: 6px;
+  background: rgb(19,20,22);
+}
+.gradButton span{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  font-size: 18px;
+  color: white;
+  z-index: 1;
+  position: relative;
+  background: transparent;
+}
+.gradButton::before{
+  content: '';
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #6fba82);
+  top: 0;
+  left: 0;
+  filter: blur(15px);
+  border-radius: 180px;
+  opacity: 0;
+}
+
+.gradButton:hover{
+  background-size: 400%;
+  animation: rotateBorder 10s linear infinite;
+}
+
+@keyframes rotateBorder{
+  0%{
+    background-position: 0 0;
+  }
+  5%{
+    background-position: 400% 0;
+  }
+  100%{
+    background-position: 0 0;
+  }
+}
+.gradButton:hover::before{
+  opacity: 1;
+  transition: 0.3s opacity ease-in-out;
+  filter: blur(15px);
+}
+/* slider css */
+
+
+.banner1, .banner2, .banner3, .banner4{
+  height:100vh;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 6% !important;
+  overflow: hidden;
+}
+
+img{
+  width: 120%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  animation: zoom-out 3s linear infinite;
+
+}
+@keyframes zoom-out{
+  100%{
+    width: 100%;
+  }
+}
+.text-box{
+  width: 600px;
+  position: absolute;
+  top: 30%;
+  left: 100px;
+  color: #16c9f6;
+  transform: translateY(100px);
+  animation: textup 12s linear infinite;
+}
+
+.text-box h2{
+  margin-bottom: 30px;
+ 
+}
+
+.text-box .line{
+  background: red;
+  height: 1px;
+  width: 100px;
+  position: absolute;
+  left: 0;
+  
+}
+.text-box p{
+  line-height: 18px;
+  margin-top: 60px;
+  margin-bottom: 40px;
+ 
+}
+.banner1{
+  animation: slider1 12s linear infinite;
+}
+.banner2{
+  animation: slider2 12s linear infinite;
+}
+.banner3{
+  animation: slider3 12s linear infinite;
+}
+.banner4{
+  animation: slider4 12s linear infinite;
+}
+
+@keyframes slider1 {
+  0%{
+    visibility:visible;
+  }
+  25%{
+    visibility:hidden;
+  }
+  50%{
+    visibility:hidden;
+  }
+  75%{
+    visibility:hidden;
+  }
+  100%{
+    visibility:visible;
+  }
+}
+@keyframes slider2 {
+  0%{
+    visibility:hidden;
+  }
+  25%{
+    visibility:hidden;
+  }
+  50%{
+    visibility:visible;
+  }
+  75%{
+    visibility:hidden;
+  }
+  100%{
+    visibility:hidden;
+  }
+}
+@keyframes slider3 {
+  0%{
+    visibility:hidden;
+  }
+  25%{
+    visibility:hidden;
+  }
+  50%{
+    visibility:hidden;
+  }
+  75%{
+    visibility:visible;
+  }
+  100%{
+    visibility:hidden;
+  }
+}
+@keyframes slider4 {
+  0%{
+    visibility:hidden;
+  }
+  25%{
+    visibility:hidden;
+  }
+  50%{
+    visibility:hidden;
+  }
+  75%{
+    visibility:hidden;
+  }
+  100%{
+    visibility:visible;
+  }
+}
+@keyframes textup{
+  10%{
+    transform: translateY(0px);
+  }
+  100%{
+    transform: translateY(0px);
+  }
+}
+.text-box1{
+  animation-delay: 0s;
+}
+.text-box2{
+  animation-delay: 3s;
+}
+.text-box3{
+  animation-delay: 6s;
+}
+.text-box4{
+  animation-delay: 9s;
+}
+
+/* 
+Pricing section  */
+.headings{
+  margin-bottom: 30px;
+}
+
+.pricing{
+  width: 100%;
+  height: 100vh;
+  padding: 50px;
+  position: relative;
+
+}
+.pricing:before{
+  content:"" ;
+  position: absolute;
+  top: 0%;
+  bottom: 0%;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  background: linear-gradient(160deg, #16c9f6 55%, #fff 0);
+
+}
+
+.money{
+  font-size: 40px;
+  line-height: 1;
+  color: #606060;
+}
+
+.card{
+  transition: 0.4s ease;
+  margin-bottom: 10px;
+}
+
+.card-header{
+  font-size: 1.6rem;
+  font-weight: bold;
+  background: white;
+  padding: 25px 9px !important;
+  
+}
+.card-body{
+  padding: 30px 0px !important;
+}
+.card-body{
+  margin: 10px 0;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #606060;
+}
+.card-footer{
+  background: white!important;
+  padding: 30px 0px!important;
+
+}
+.card-footer a{
+  border: 1px solid #50d1c0;
+  border-radius: 100px;
+  margin: 20px 5px;
+  padding: 12px 35px;
+  outline: none;
+  color:#50d1c0 ;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.4;
+  text-align: center;
+
+}
+.card:hover .card-footer a:hover{
+  color: #fff;
+  background: #50d1c0;
+  text-decoration: none;
+  box-shadow: 0 0 20px 0 rgba(0,0,0,0.3);
+
+}
+.card:hover{
+  transform: translateY(-20px);
+  box-shadow: 0 0 20px 0 rgba(0,0,0,0.3);
+}
+.card:hover .card-header, .card:hover .money{
+  color: #50d1c0 ;
+}
+
+
+/* contact us */
+.contactus{
+  width: 100%;
+  height: 100vh;
+  padding: 80px 0;
+  position: relative;
+}
+.detail{
+margin-bottom: 20px;
+}
+.contactus::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(330deg, #16c9f6 55%, #fff 0%);
+  z-index: -1; 
+}
+.form-group{
+  margin-bottom: 10px;
+}
+.form-button button{
+  border: 1px solid #50d1c0;
+  border-radius: 100px;
+  margin: 20px 5px;
+  padding: 12px 35px;
+  outline: none;
+  color:#50d1c0 ;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.4;
+  text-align: center;
+  background: transparent;
+
+}
+.form-button button:hover{
+  color: #50d1c0;
+
+}
+
+form:hover .form-button button{
+  background: #fff;
+  color:#50d1c0 ;
+  box-shadow: 0 0 20px 0 rgba(0,0,0,0.3);
+}
+
+::placeholder{
+  font-size: 0.85rem;
+
+}
+
+
+/* 
+card css */
+
+.happyclinets{
+  width: 100%;
+  height: 100vh;
+  padding: 80px 0;
+}
+.box{
+  text-align: center;
+  border: 1px solid rgba(0,0,0,0.2);
+  box-shadow: 0 5px 10px 0 rgba(0,0,0,0.3);
+  border-radius: 2px;
+  transition: 0.3s ease ;
+}
+
+.box:hover{
+  background-color: #16c9f6!important;
+}
+
+.box:hover p {
+  color: white;
+}
+
+.box a{
+  position: relative;
+}
+
+
+.box h1{
+  font-size: 18px;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 10px;
+
+}
+.box h2{
+  font-size: 13px;
+  font-weight: 400;
+  color: #666666;
+  margin-bottom: 20px;
 }
